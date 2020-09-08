@@ -44,9 +44,19 @@ public class MainActivity extends AppCompatActivity {
         lisstener = new MyAdapter.RecyclerViewClickLisstener() {
             @Override
             public void onClick(View v, int position) {
-                Intent intent = new Intent( getApplicationContext(),ProfileActivity.class);
-                intent.putExtra("username",usersList.get(position).getUsername());
-                startActivity(intent);
+                if (position == 0){
+                    Intent intent = new Intent(MainActivity.this,MainActivity3.class);
+                    startActivity(intent);
+                }
+
+                if (position == 1){
+                    Intent intent = new Intent(MainActivity.this,MainActivity2.class);
+                    startActivity(intent);
+                }
+                if (position == 9){
+                    Intent intent = new Intent(MainActivity.this,MainActivity4.class);
+                    startActivity(intent);
+                }
 
             }
         };
